@@ -4,7 +4,7 @@ import { z } from "zod";
 import files from "./files.json";
 
 export const schema = z.object({
-  php_version: z.string().default("7.4-apache"),
+  php_version: z.string().default("8.3-apache"),
   packages: z
     .string()
     .default(
