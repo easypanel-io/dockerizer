@@ -1,10 +1,1 @@
-{
-  "node_version": "node:18",
-  "alpine": true,
-  "alpinePackages": "build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git",
-  "node_env": "production",
-  "build_packages": "node-gyp",
-  "production_packages": "vips-dev",
-  "user": "node",
-  "port": "1337"
-}
+{}
