@@ -1,6 +1,1 @@
-{
-  "php_version": "7.4-apache",
-  "packages": "libzip-dev unzip libpng-dev libjpeg-dev libonig-dev libxml2-dev curl",
-  "php_extensions": "pdo_mysql zip exif pcntl bcmath gd",
-  "port": 80
-}
+{}

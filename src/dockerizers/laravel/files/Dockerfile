@@ -3,8 +3,7 @@ FROM php:{{php_version}}
 
 # Install required extensions and packages
 RUN apt-get update \
-    && apt-get install -y {{packages}}
-&& docker-php-ext-install {{php_extensions}}
+    && apt-get install -y {{packages}} && docker-php-ext-install {{php_extensions}}
 
 # Enable Apache modules
 RUN a2enmod rewrite

@@ -3,8 +3,7 @@ FROM php:7.4-apache
 
 # Install required extensions and packages
 RUN apt-get update \
-    && apt-get install -y libzip-dev unzip libpng-dev libjpeg-dev libonig-dev libxml2-dev curl
-&& docker-php-ext-install pdo_mysql zip exif pcntl bcmath gd
+    && apt-get install -y libzip-dev unzip libpng-dev libjpeg-dev libonig-dev libxml2-dev curl && docker-php-ext-install pdo_mysql zip exif pcntl bcmath gd
 
 # Enable Apache modules
 RUN a2enmod rewrite
