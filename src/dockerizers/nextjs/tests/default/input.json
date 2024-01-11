@@ -1,0 +1,10 @@
+{
+  "node_version": "node:18",
+  "alpine": true,
+  "telemetry": false,
+  "host": "localhost",
+  "port": "3000",
+  "filePermissions_user": "nextjs",
+  "filePermissions_group": "nodejs",
+  "alpinePackages": "libc6-compat"
+}
