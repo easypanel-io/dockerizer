@@ -4,20 +4,22 @@ import { z } from "zod";
 import files from "./files.json";
 
 export const schema = z.object({
-  node_version: z.string(),
-  alpine: z.boolean(),
-  telemetry: z.boolean(),
-  host: z.string(),
-  port: z.string(),
+  node_version: z.string().default("node:18"),
+  alpine: z.boolean().default(true),
+  telemetry: z.boolean().default(false),
+  host: z.string().default("0.0.0.0"),
+  port: z.string().default("3000"),
   // advanced
-  filePermissions_user: z.string(),
-  filePermissions_group: z.string(),
-  alpinePackages: z.string(),
+  filePermissions_user: z.string().default("nextjs"),
+  filePermissions_group: z.string().default("nodejs"),
+  alpinePackages: z.string().default("libc6-compat"),
 });
 
-export function generate(input: z.infer<typeof schema>): Files {
+export const defaultValues = schema.parse({});
+
+export function generate(rawInput: z.infer<typeof schema>): Files {
+  const input = schema.parse(rawInput);
   return {
-    ...files,
-    Dockerfile: renderString(files["Dockerfile"], input),
+    Dockerfile: renderString(files["Dockerfile.njk"], input),
   };
 }

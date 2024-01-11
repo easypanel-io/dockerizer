@@ -2,7 +2,7 @@ import { Layout } from "@/components/Layout";
 import { Form } from "@/components/ui/form";
 import { FormInput, FormSelect, FormSwitch } from "@/components/ui/form-fields";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { generate, schema } from "@/dockerizers/nextjs";
+import { defaultValues, generate, schema } from "@/dockerizers/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -10,16 +10,7 @@ import * as z from "zod";
 export default function Page() {
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
-    defaultValues: {
-      node_version: "node:18",
-      alpine: true,
-      telemetry: false,
-      host: "localhost",
-      port: "3000",
-      filePermissions_user: "nextjs",
-      filePermissions_group: "nodejs",
-      alpinePackages: "libc6-compat",
-    },
+    defaultValues,
   });
 
   return (
