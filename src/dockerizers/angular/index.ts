@@ -4,6 +4,7 @@ import { z } from "zod";
 import files from "./files.json";
 
 export const schema = z.object({
+  project_name: z.string().default("myApp"),
   node_image: z.string().default("node:18-alpine"),
   nginx_image: z.string().default("nginx:stable"),
   port: z.string().default("80"),

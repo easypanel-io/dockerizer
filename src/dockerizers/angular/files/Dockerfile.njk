@@ -1,0 +1,13 @@
+# Use official node image as the base image
+FROM {{ node_image }} as build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Use official nginx image as the base image
+FROM {{ nginx_image }}
+COPY --from=build /app/dist/{{ project_name }}/browser /usr/share/nginx/html
+EXPOSE {{ port }}
+CMD ["nginx", "-g", "daemon off;"]

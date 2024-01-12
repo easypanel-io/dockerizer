@@ -1,0 +1,3 @@
+{
+  "Dockerfile.njk": "# build stage\nFROM {{ node_image }} as build\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nRUN npm run build\n\n# production stage\nFROM {{ nginx_image }} as production\nCOPY --from=build /app/dist /usr/share/nginx/html\nEXPOSE {{ port }}\nCMD [\"nginx\", \"-g\", \"daemon off;\"]"
+}
