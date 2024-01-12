@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
+  distDir: "dist",
+  basePath: process.env.NODE_ENV === "production" ? "/dockerizer" : undefined,
+  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  images: { unoptimized: true },
   reactStrictMode: true,
 };
 

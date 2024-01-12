@@ -10,7 +10,8 @@
     "compile-files": "tsx src/scripts/compile-files.ts",
     "compile-files-watch": "nodemon --exec npm run compile-files --watch './src/pages/*/files/**' --ext '*'",
     "compile-tests": "tsx src/scripts/compile-tests.ts",
-    "compile": "npm run compile-files && npm run compile-tests"
+    "compile": "npm run compile-files && npm run compile-tests",
+    "move-dist": "rm -rf ../website/static/dockerizer/* && cp -r ./dist/* ../website/static/dockerizer/"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
