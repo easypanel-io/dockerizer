@@ -1,7 +1,6 @@
-import { Layout } from "@/components/Layout";
+import { DockerizerLayout } from "@/components/Layout";
 import { Form } from "@/components/ui/form";
 import { FormInput, FormSelect, FormSwitch } from "@/components/ui/form-fields";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   defaultValues,
   generate,
@@ -19,59 +18,48 @@ export default function Page() {
   });
 
   return (
-    <Layout
-      title="NextJs"
+    <DockerizerLayout
+      title="Next.js"
       getFiles={() => generate(form.getValues())}
-      description="desc"
     >
       <Form {...form}>
-        <Tabs defaultValue="basic" className="my-4">
-          <TabsList>
-            <TabsTrigger value="basic">Basic</TabsTrigger>
-            <TabsTrigger value="advanced">Advanced</TabsTrigger>
-          </TabsList>
-          <TabsContent value="basic" className="space-y-8">
-            <FormSelect
-              control={form.control}
-              name="nodeImage"
-              label="Node image"
-              options={nodeImageOptions}
-            />
-            <FormSwitch
-              control={form.control}
-              name="telemetry"
-              label="Telemetry"
-              description="Check if you want Telemetry"
-            />
-          </TabsContent>
-          <TabsContent value="advanced" className="space-y-8">
-            <FormInput
-              control={form.control}
-              name="filePermissionsUser"
-              label="File Permissions (User)"
-              inputProps={{
-                placeholder: "...",
-              }}
-            />
-            <FormInput
-              control={form.control}
-              name="filePermissionsGroup"
-              label="File Permissions (Group)"
-              inputProps={{
-                placeholder: "...",
-              }}
-            />
-            <FormInput
-              control={form.control}
-              name="alpinePackages"
-              label="Alpine packages"
-              inputProps={{
-                placeholder: "...",
-              }}
-            />
-          </TabsContent>
-        </Tabs>
+        <FormSelect
+          control={form.control}
+          name="nodeImage"
+          label="Node image"
+          options={nodeImageOptions}
+        />
+        <FormSwitch
+          control={form.control}
+          name="telemetry"
+          label="Telemetry"
+          description="Check if you want Telemetry"
+        />
+        <FormInput
+          control={form.control}
+          name="filePermissionsUser"
+          label="File Permissions (User)"
+          inputProps={{
+            placeholder: "...",
+          }}
+        />
+        <FormInput
+          control={form.control}
+          name="filePermissionsGroup"
+          label="File Permissions (Group)"
+          inputProps={{
+            placeholder: "...",
+          }}
+        />
+        <FormInput
+          control={form.control}
+          name="alpinePackages"
+          label="Alpine packages"
+          inputProps={{
+            placeholder: "...",
+          }}
+        />
       </Form>
-    </Layout>
+    </DockerizerLayout>
   );
 }
