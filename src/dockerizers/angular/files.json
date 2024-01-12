@@ -1,3 +1,3 @@
 {
-  "Dockerfile.njk": "# Use official node image as the base image\nFROM {{ node_image }} as build\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nRUN npm run build\n\n# Use official nginx image as the base image\nFROM {{ nginx_image }}\nCOPY --from=build /app/dist/{{ project_name }}/browser /usr/share/nginx/html\nEXPOSE {{ port }}\nCMD [\"nginx\", \"-g\", \"daemon off;\"]"
+  "Dockerfile.njk": "# Use official node image as the base image\nFROM {{ nodeImage }} as build\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nRUN npm run build\n\n# Use official nginx image as the base image\nFROM {{ nginxImage }}\nCOPY --from=build /app/dist/{{ projectName }}/browser /usr/share/nginx/html\nEXPOSE {{ port }}\nCMD [\"nginx\", \"-g\", \"daemon off;\"]"
 }

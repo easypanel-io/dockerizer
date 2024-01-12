@@ -1,1 +1,0 @@
-test {{projectName}} is good

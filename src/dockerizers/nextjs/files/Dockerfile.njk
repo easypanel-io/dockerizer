@@ -1,4 +1,4 @@
-FROM {{node_version}}{{ "-alpine" if alpine }} AS base
+FROM {{ nodeImage }} AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -51,8 +51,8 @@ ENV NEXT_TELEMETRY_DISABLED 1
 {% endif %}
 
 
-RUN addgroup --system --gid 1001 {{filePermissions_group}}
-RUN adduser --system --uid 1001 {{filePermissions_user}}
+RUN addgroup --system --gid 1001 {{filePermissionsGroup}}
+RUN adduser --system --uid 1001 {{filePermissionsUser}}
 
 COPY --from=builder /app/public ./public
 

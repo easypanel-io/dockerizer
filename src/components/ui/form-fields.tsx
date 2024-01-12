@@ -118,7 +118,7 @@ export const FormSelect = <
 }: Omit<ControllerProps<TFieldValues, TName>, "render"> & {
   label: ReactNode;
   description?: ReactNode;
-  options: { label: string; value: string }[];
+  options: { label: string; value: string }[] | string[];
 }) => {
   return (
     <>
@@ -134,11 +134,17 @@ export const FormSelect = <
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
-                {options.map((option, i) => (
-                  <SelectItem key={i} value={option.value}>
-                    {option.label}
-                  </SelectItem>
-                ))}
+                {options.map((option, i) =>
+                  typeof option === "string" ? (
+                    <SelectItem key={i} value={option}>
+                      {option}
+                    </SelectItem>
+                  ) : (
+                    <SelectItem key={i} value={option.value}>
+                      {option.label}
+                    </SelectItem>
+                  )
+                )}
               </SelectContent>
             </Select>
             {description && <FormDescription>{description}</FormDescription>}

@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "fs/promises";
+import { mkdir, readFile, rm, writeFile } from "fs/promises";
 import { globSync } from "glob";
 import { dirname } from "path";
 
@@ -13,6 +13,11 @@ async function run() {
     const input = JSON.parse(await readFile(inputFile, "utf-8"));
 
     const codePath = inputFile.split("/").slice(0, 5).join("/") + "/code";
+
+    await rm(`${codePath}/dockerizer`, {
+      force: true,
+      recursive: true,
+    });
 
     const files = generate(input);
     for (const file of Object.keys(files)) {

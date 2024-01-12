@@ -1,9 +1,9 @@
 # Use an official PHP image as the base image
-FROM php:{{php_version}}
+FROM php:{{phpVersion}}
 
 # Install required extensions and packages
 RUN apt-get update \
-    && apt-get install -y {{packages}} && docker-php-ext-install {{php_extensions}}
+    && apt-get install -y {{packages}} && docker-php-ext-install {{phpExtensions}}
 
 # Enable Apache modules
 RUN a2enmod rewrite

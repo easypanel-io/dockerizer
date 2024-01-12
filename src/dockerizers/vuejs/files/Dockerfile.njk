@@ -1,5 +1,5 @@
 # build stage
-FROM {{ node_image }} as build
+FROM {{ nodeImage }} as build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 
 # production stage
-FROM {{ nginx_image }} as production
+FROM {{ nginxImage }} as production
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 EXPOSE {{ port }}
 CMD ["nginx", "-g", "daemon off;"]

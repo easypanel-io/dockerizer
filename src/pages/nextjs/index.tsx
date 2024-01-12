@@ -2,7 +2,12 @@ import { Layout } from "@/components/Layout";
 import { Form } from "@/components/ui/form";
 import { FormInput, FormSelect, FormSwitch } from "@/components/ui/form-fields";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { defaultValues, generate, schema } from "@/dockerizers/nextjs";
+import {
+  defaultValues,
+  generate,
+  nodeImageOptions,
+  schema,
+} from "@/dockerizers/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -28,20 +33,9 @@ export default function Page() {
           <TabsContent value="basic" className="space-y-8">
             <FormSelect
               control={form.control}
-              name="node_version"
-              label="Node version"
-              options={[
-                { label: "node:14", value: "node:14" },
-                { label: "node:16", value: "node:16" },
-                { label: "node:18", value: "node:18" },
-                { label: "node:20", value: "node:20" },
-              ]}
-            />
-            <FormSwitch
-              control={form.control}
-              name="alpine"
-              label="Node alpine?"
-              description="Check if you want the alpine version of node selected"
+              name="nodeImage"
+              label="Node image"
+              options={nodeImageOptions}
             />
             <FormSwitch
               control={form.control}
@@ -53,7 +47,7 @@ export default function Page() {
           <TabsContent value="advanced" className="space-y-8">
             <FormInput
               control={form.control}
-              name="filePermissions_user"
+              name="filePermissionsUser"
               label="File Permissions (User)"
               inputProps={{
                 placeholder: "...",
@@ -61,7 +55,7 @@ export default function Page() {
             />
             <FormInput
               control={form.control}
-              name="filePermissions_group"
+              name="filePermissionsGroup"
               label="File Permissions (Group)"
               inputProps={{
                 placeholder: "...",
