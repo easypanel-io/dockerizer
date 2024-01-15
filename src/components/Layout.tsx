@@ -6,7 +6,13 @@ import { downloadZip } from "@/lib/download";
 import { detectLanguage } from "@/lib/highlight";
 import { Files } from "@/lib/types";
 import { debounce } from "lodash";
-import { CopyIcon, DownloadIcon, ShipIcon } from "lucide-react";
+import {
+  CopyIcon,
+  DownloadIcon,
+  GithubIcon,
+  PlayIcon,
+  ShipIcon,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 import { Inter } from "next/font/google";
 import Link from "next/link";
@@ -40,13 +46,11 @@ export function Layout({ children }: { children: ReactNode }) {
 export function DockerizerLayout({
   children,
   title,
-  description,
   form,
   generate,
 }: {
   children: ReactNode;
   title: ReactNode;
-  description?: ReactNode;
   form: UseFormReturn<any>;
   generate: (values: any) => Files;
 }) {
@@ -64,17 +68,34 @@ export function DockerizerLayout({
     <Form {...form}>
       <Layout>
         <div className="flex flex-col items-center my-24">
-          <div className="mb-6 text-green-500 border rounded-full py-1 px-3 border-green-500 text-sm leading-6">
-            <Link href="https://easypanel.io/" className="">
-              Provided by Easypanel
-            </Link>
-          </div>
-          <h1 className="text-4xl tracking-tight font-semibold">
+          <Link
+            href="https://easypanel.io/"
+            className="mb-6 text-green-500 border rounded-full py-1 px-3 border-green-500 bg-green-500/5 hover:bg-green-500/15 text-sm font-medium leading-6 transition"
+          >
+            Provided by Easypanel
+          </Link>
+          <h1 className="text-5xl tracking-tight font-bold">
             Dockerize {title} Applications
           </h1>
-          {description && <h2 className="text-xl">{description}</h2>}
+          <h2 className="text-2xl text-zinc-300/90 mt-2">
+            The fastest way to dockerize your {title} app.
+          </h2>
+          <div className="flex space-x-2 mt-10">
+            <Button variant="secondary" size="lg" asChild>
+              <Link href="#start">
+                <PlayIcon className="mr-2 h-5 w-5" />
+                Get Started
+              </Link>
+            </Button>
+            <Button variant="secondary" size="lg" asChild>
+              <Link href="https://github.com/easypanel-io/dockerizer">
+                <GithubIcon className="mr-2 h-5 w-5" />
+                Github
+              </Link>
+            </Button>
+          </div>
         </div>
-        <div className="space-y-8">
+        <div className="space-y-8 scroll-mt-16" id="start">
           <div className="space-y-6">{children}</div>
           <div>
             <h2>Setup & Build</h2>
