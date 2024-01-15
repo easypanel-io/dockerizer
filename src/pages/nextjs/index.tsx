@@ -1,5 +1,4 @@
 import { DockerizerLayout } from "@/components/Layout";
-import { Form } from "@/components/ui/form";
 import { FormInput, FormSelect, FormSwitch } from "@/components/ui/form-fields";
 import {
   defaultValues,
@@ -19,44 +18,42 @@ export default function Page() {
 
   return (
     <DockerizerLayout title="Next.js" form={form} generate={generate}>
-      <Form {...form}>
-        <FormSelect
-          control={form.control}
-          name="nodeImage"
-          label="Node image"
-          options={nodeImageOptions}
-        />
-        <FormSwitch
-          control={form.control}
-          name="telemetry"
-          label="Telemetry"
-          description="Check if you want Telemetry"
-        />
-        <FormInput
-          control={form.control}
-          name="filePermissionsUser"
-          label="File Permissions (User)"
-          inputProps={{
-            placeholder: "...",
-          }}
-        />
-        <FormInput
-          control={form.control}
-          name="filePermissionsGroup"
-          label="File Permissions (Group)"
-          inputProps={{
-            placeholder: "...",
-          }}
-        />
-        <FormInput
-          control={form.control}
-          name="alpinePackages"
-          label="Alpine packages"
-          inputProps={{
-            placeholder: "...",
-          }}
-        />
-      </Form>
+      <FormSelect
+        control={form.control}
+        name="nodeImage"
+        label="Node image"
+        options={nodeImageOptions}
+      />
+      <FormSwitch
+        control={form.control}
+        name="telemetry"
+        label="Telemetry"
+        description="Check if you want Telemetry"
+      />
+      <FormInput
+        control={form.control}
+        name="filePermissionsUser"
+        label="File Permissions (User)"
+        inputProps={{
+          placeholder: "...",
+        }}
+      />
+      <FormInput
+        control={form.control}
+        name="filePermissionsGroup"
+        label="File Permissions (Group)"
+        inputProps={{
+          placeholder: "...",
+        }}
+      />
+      <FormInput
+        control={form.control}
+        name="alpinePackages"
+        label="Alpine packages"
+        inputProps={{
+          placeholder: "...",
+        }}
+      />
     </DockerizerLayout>
   );
 }
