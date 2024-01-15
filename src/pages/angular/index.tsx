@@ -19,10 +19,7 @@ export default function Page() {
   });
 
   return (
-    <DockerizerLayout
-      title="Angular"
-      getFiles={() => generate(form.getValues())}
-    >
+    <DockerizerLayout title="Angular" form={form} generate={generate}>
       <Form {...form}>
         <FormInput
           control={form.control}

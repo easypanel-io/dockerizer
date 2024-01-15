@@ -19,7 +19,7 @@ export default function Page() {
   });
 
   return (
-    <DockerizerLayout title="React" getFiles={() => generate(form.getValues())}>
+    <DockerizerLayout title="React" form={form} generate={generate}>
       <Form {...form}>
         <FormSelect
           control={form.control}

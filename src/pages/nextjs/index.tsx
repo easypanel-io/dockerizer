@@ -18,10 +18,7 @@ export default function Page() {
   });
 
   return (
-    <DockerizerLayout
-      title="Next.js"
-      getFiles={() => generate(form.getValues())}
-    >
+    <DockerizerLayout title="Next.js" form={form} generate={generate}>
       <Form {...form}>
         <FormSelect
           control={form.control}

@@ -19,7 +19,7 @@ export default function Page() {
   });
 
   return (
-    <DockerizerLayout title="VueJs" getFiles={() => generate(form.getValues())}>
+    <DockerizerLayout title="VueJs" form={form} generate={generate}>
       <Form {...form}>
         <FormSelect
           control={form.control}

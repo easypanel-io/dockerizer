@@ -18,10 +18,7 @@ export default function Page() {
   });
 
   return (
-    <DockerizerLayout
-      title="Strapi"
-      getFiles={() => generate(form.getValues())}
-    >
+    <DockerizerLayout title="Strapi" form={form} generate={generate}>
       <Form {...form}>
         <FormSelect
           control={form.control}
