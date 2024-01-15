@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Toaster } from "@/components/ui/sonner";
 import { downloadZip } from "@/lib/download";
 import { detectLanguage } from "@/lib/highlight";
@@ -24,7 +25,9 @@ export function Layout({ children }: { children: ReactNode }) {
           <Link href="/">Dockerizer</Link> by{" "}
           <Link href="https://easypanel.io/">Easypanel</Link>
         </div>
-        <div className=""></div>
+        <div className="">
+          <ModeToggle />
+        </div>
       </div>
       <div className="max-w-6xl px-4 mx-auto mt-28 mb-16">{children}</div>
       <Toaster />
