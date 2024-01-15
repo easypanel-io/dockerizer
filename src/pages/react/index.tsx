@@ -1,5 +1,4 @@
 import { DockerizerLayout } from "@/components/Layout";
-import { Form } from "@/components/ui/form";
 import { FormInput, FormSelect } from "@/components/ui/form-fields";
 import {
   defaultValues,
@@ -19,30 +18,28 @@ export default function Page() {
   });
 
   return (
-    <DockerizerLayout title="React" getFiles={() => generate(form.getValues())}>
-      <Form {...form}>
-        <FormSelect
-          control={form.control}
-          name="nodeImage"
-          label="Node image"
-          options={nodeImageOptions}
-        />
-        <FormSelect
-          control={form.control}
-          name="nginxImage"
-          label="Nginx image"
-          options={nginxImageOptions}
-        />
-        <FormInput
-          control={form.control}
-          name="port"
-          label="Port"
-          inputProps={{
-            placeholder: "80",
-            type: "number",
-          }}
-        />
-      </Form>
+    <DockerizerLayout title="React" form={form} generate={generate}>
+      <FormSelect
+        control={form.control}
+        name="nodeImage"
+        label="Node image"
+        options={nodeImageOptions}
+      />
+      <FormSelect
+        control={form.control}
+        name="nginxImage"
+        label="Nginx image"
+        options={nginxImageOptions}
+      />
+      <FormInput
+        control={form.control}
+        name="port"
+        label="Port"
+        inputProps={{
+          placeholder: "80",
+          type: "number",
+        }}
+      />
     </DockerizerLayout>
   );
 }
