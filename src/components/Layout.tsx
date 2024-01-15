@@ -67,17 +67,17 @@ export function DockerizerLayout({
   return (
     <Form {...form}>
       <Layout>
-        <div className="flex flex-col items-center my-24">
+        <div className="flex flex-col items-start my-24">
           <Link
             href="https://easypanel.io/"
-            className="mb-6 text-green-500 border rounded-full py-1 px-3 border-green-500 bg-green-500/5 hover:bg-green-500/15 text-sm font-medium leading-6 transition"
+            className="mb-6 text-green-500 border rounded-full py-1 px-3 border-green-300 dark:border-green-800 bg-green-500/5 hover:bg-green-500/15 text-sm font-medium leading-6 transition"
           >
             Provided by Easypanel
           </Link>
           <h1 className="text-5xl tracking-tight font-bold">
             Dockerize {title} Applications
           </h1>
-          <h2 className="text-2xl text-zinc-300/90 mt-2">
+          <h2 className="text-2xl text-zinc-600/90 dark:text-zinc-300/90 mt-2">
             The fastest way to dockerize your {title} app.
           </h2>
           <div className="flex space-x-2 mt-10">
