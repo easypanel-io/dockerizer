@@ -5,13 +5,7 @@ import files from "./files.json";
 
 export const schema = z.object({
   nodeImage: z.string().default("node:20"),
-  telemetry: z.boolean().default(false),
-  host: z.string().default("0.0.0.0"),
   port: z.string().default("3000"),
-  // advanced
-  filePermissionsUser: z.string().default("nextjs"),
-  filePermissionsGroup: z.string().default("nodejs"),
-  alpinePackages: z.string().default("libc6-compat"),
 });
 
 export const nodeImageOptions = [

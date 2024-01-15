@@ -1,5 +1,5 @@
 import { DockerizerLayout } from "@/components/Layout";
-import { FormInput, FormSelect, FormSwitch } from "@/components/ui/form-fields";
+import { FormInput, FormSelect } from "@/components/ui/form-fields";
 import {
   defaultValues,
   generate,
@@ -24,34 +24,13 @@ export default function Page() {
         label="Node image"
         options={nodeImageOptions}
       />
-      <FormSwitch
-        control={form.control}
-        name="telemetry"
-        label="Telemetry"
-        description="Check if you want Telemetry"
-      />
       <FormInput
         control={form.control}
-        name="filePermissionsUser"
-        label="File Permissions (User)"
+        name="port"
+        label="Port"
         inputProps={{
-          placeholder: "...",
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="filePermissionsGroup"
-        label="File Permissions (Group)"
-        inputProps={{
-          placeholder: "...",
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="alpinePackages"
-        label="Alpine packages"
-        inputProps={{
-          placeholder: "...",
+          type: "number",
+          placeholder: "3000",
         }}
       />
     </DockerizerLayout>
