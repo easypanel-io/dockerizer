@@ -19,7 +19,10 @@ import Link from "next/link";
 import { ReactNode, useCallback, useEffect, useState } from "react";
 import { UseFormReturn } from "react-hook-form";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { dark, docco } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import {
+  atomOneDark,
+  atomOneLight,
+} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { toast } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -94,7 +97,10 @@ export function DockerizerLayout({
               Get Started
             </Button>
             <Button variant="secondary" size="lg" asChild>
-              <Link href="https://github.com/easypanel-io/dockerizer">
+              <Link
+                href="https://github.com/easypanel-io/dockerizer"
+                target="_blank"
+              >
                 <GithubIcon className="mr-2 h-5 w-5" />
                 Github
               </Link>
@@ -130,7 +136,7 @@ export function DockerizerLayout({
                   </div>
                   <SyntaxHighlighter
                     language={detectLanguage(name)}
-                    style={theme === "light" ? docco : dark}
+                    style={theme === "light" ? atomOneLight : atomOneDark}
                     className="text-sm  !p-4"
                   >
                     {content}
