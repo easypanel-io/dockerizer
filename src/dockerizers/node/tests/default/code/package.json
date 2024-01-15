@@ -1,0 +1,18 @@
+{
+  "name": "node-express",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "description": "node-express",
+  "author": "Easypanel",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "nodejs",
+    "express"
+  ],
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

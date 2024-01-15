@@ -1,0 +1,3 @@
+{
+  "Dockerfile.njk": "FROM {{nodeImage}}\n\nWORKDIR /app\n\nCOPY package*.json ./\n\nRUN npm install\n\nCOPY . .\n\nEXPOSE {{port}}\n\nRUN npm run build\nCMD [ \"npm\", \"run\", \"start\" ]"
+}

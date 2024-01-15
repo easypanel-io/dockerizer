@@ -1,0 +1,3 @@
+{
+  "Dockerfile.njk": "# Base image\nFROM {{ nodeImage }}\n\n# Create app directory\nWORKDIR /usr/src/app\n\n# A wildcard is used to ensure both package.json AND package-lock.json are copied\nCOPY package*.json ./\n\n# Install app dependencies\nRUN npm install\n\n# Bundle app source\nCOPY . .\n\n# Start the server using the production build\nCMD [ \"node\", \"index.js\" ]\n\n# Exposing server port\nEXPOSE {{ port }}"
+}
