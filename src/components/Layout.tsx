@@ -81,11 +81,17 @@ export function DockerizerLayout({
             The fastest way to dockerize your {title} app.
           </h2>
           <div className="flex space-x-2 mt-10">
-            <Button variant="secondary" size="lg" asChild>
-              <Link href="#start">
-                <PlayIcon className="mr-2 h-5 w-5" />
-                Get Started
-              </Link>
+            <Button
+              variant="secondary"
+              size="lg"
+              onClick={(e) => {
+                document
+                  .getElementById("start")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              <PlayIcon className="mr-2 h-5 w-5" />
+              Get Started
             </Button>
             <Button variant="secondary" size="lg" asChild>
               <Link href="https://github.com/easypanel-io/dockerizer">
