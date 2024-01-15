@@ -27,5 +27,6 @@ export function generate(rawInput: z.infer<typeof schema>): Files {
   const input = schema.parse(rawInput);
   return {
     Dockerfile: renderString(files["Dockerfile.njk"], input),
+    "default.conf": files["default.conf"],
   };
 }
