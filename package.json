@@ -30,6 +30,7 @@
     "file-saver": "^2.0.5",
     "glob": "^10.3.10",
     "jszip": "^3.10.1",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.307.0",
     "next": "14.0.4",
     "next-themes": "^0.2.1",
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.7",
+    "@types/lodash": "^4.14.202",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
