@@ -1,16 +1,13 @@
-FROM {{ phpImage }}
+FROM webdevops/php-{{ webServer }}:{{ phpVersion }}{{ '-alpine' if alpine }}
 
 COPY ./dockerizer/php.ini /opt/docker/etc/php/php.ini
 
 {% if webServer === "apache" -%}
 COPY ./dockerizer/vhost.conf /opt/docker/etc/httpd/vhost.conf
-{% else -%}
+{% endif -%}
+{% if webServer === "nginx" -%}
 COPY ./dockerizer/vhost.conf /opt/docker/etc/nginx/vhost.conf
 {%- endif %}
-
-{% if phpUnixSocket -%}
-ENV WEB_PHP_SOCKET {{ phpUnixSocketValue }}
-{% endif -%}
 
 {% if runComposerInstall %}
 COPY composer.json composer.lock /app/
@@ -18,6 +15,3 @@ RUN composer install --no-interaction --no-scripts --no-suggest
 {% endif %}
 
 COPY . /app
-
-# Set the correct permissions
-# RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache

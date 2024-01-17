@@ -3,7 +3,7 @@ import { FormInput, FormSelect, FormSwitch } from "@/components/ui/form-fields";
 import {
   defaultValues,
   generate,
-  phpImageOptions,
+  phpVersionOptions,
   schema,
   webServerOptions,
 } from "@/dockerizers/php";
@@ -22,10 +22,11 @@ export default function Page() {
     <DockerizerLayout title="PHP" form={form} generate={generate}>
       <FormSelect
         control={form.control}
-        name="phpImage"
-        label="Node image"
-        options={phpImageOptions}
+        name="phpVersion"
+        label="PHP version"
+        options={phpVersionOptions}
       />
+      <FormSwitch control={form.control} name="alpine" label="Alpine" />
       <FormInput
         control={form.control}
         name="documentRoot"
@@ -34,21 +35,6 @@ export default function Page() {
           placeholder: "/",
         }}
       />
-      <FormSwitch
-        control={form.control}
-        name="phpUnixSocket"
-        label="PHP Unix Socket"
-      />
-      {form.getValues().phpUnixSocket && (
-        <FormInput
-          control={form.control}
-          name="phpUnixSocketValue"
-          label="PHP Unix Socket Value"
-          inputProps={{
-            placeholder: "/var/run/php-fpm.sock",
-          }}
-        />
-      )}
       <FormSelect
         control={form.control}
         name="webServer"

@@ -5,11 +5,10 @@ import { z } from "zod";
 import files from "./files.json";
 
 export const schema = z.object({
-  phpImage: z.string().default("webdevops/php-apache:8.2-alpine"),
+  phpVersion: z.string().default("8.2"),
+  alpine: z.boolean().default(true),
   documentRoot: z.string().default("/"),
-  phpUnixSocket: z.boolean().default(true),
-  phpUnixSocketValue: z.string().default("/var/run/php-fpm.sock"),
-  webServer: z.string().default("apache"),
+  webServer: z.string().default("nginx"),
   runComposerInstall: z.boolean().default(true),
 
   phpDateTimezone: z.string().default("Europe/Bucharest"),
@@ -22,19 +21,7 @@ export const schema = z.object({
 
 export const webServerOptions = ["apache", "nginx"];
 
-export const phpImageOptions = [
-  "webdevops/php-apache:7.2-alpine",
-  "webdevops/php-apache:7.3-alpine",
-  "webdevops/php-apache:7.4-alpine",
-  "webdevops/php-apache:8.0-alpine",
-  "webdevops/php-apache:8.1-alpine",
-  "webdevops/php-apache:8.2-alpine",
-];
-
-export const phpUnixSocketValueOptions = [
-  "127.0.0.1:9000",
-  "/var/run/php-fpm.sock",
-];
+export const phpVersionOptions = ["7.2", "7.3", "7.4", "8.0", "8.1", "8.2"];
 
 export const defaultValues = schema.parse({});
 
