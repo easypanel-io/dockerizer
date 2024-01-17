@@ -9,7 +9,7 @@ export const schema = z.object({
   alpine: z.boolean().default(true),
   documentRoot: z.string().default("/"),
   webServer: z.string().default("nginx"),
-  runComposerInstall: z.boolean().default(true),
+  runComposerInstall: z.boolean().default(false),
 
   phpDateTimezone: z.string().default("Europe/Bucharest"),
   phpDisplayErrors: z.string().default("Off"),

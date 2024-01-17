@@ -6,8 +6,5 @@ COPY ./dockerizer/vhost.conf /opt/docker/etc/httpd/vhost.conf
 
 
 
-COPY composer.json composer.lock /app/
-RUN composer install --no-interaction --no-scripts --no-suggest
-
 
 COPY . /app
