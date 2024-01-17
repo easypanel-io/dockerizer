@@ -7,9 +7,6 @@ COPY ./dockerizer/vhost.conf /opt/docker/etc/httpd/vhost.conf
 
 ENV WEB_PHP_SOCKET /var/run/php-fpm.sock
 
-COPY composer.json composer.lock /app/
-RUN composer install --no-interaction --no-scripts --no-suggest
-
 
 COPY . /app
 
