@@ -11,4 +11,4 @@ ENV WEB_PHP_SOCKET /var/run/php-fpm.sock
 COPY . /app
 
 # Set the correct permissions
-# RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
