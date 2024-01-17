@@ -17,6 +17,7 @@ COPY composer.json composer.lock /app/
 RUN composer install --no-interaction --no-scripts --no-suggest
 {% endif %}
 
+WORKDIR /app
 COPY . /app
 
 # Set the correct permissions

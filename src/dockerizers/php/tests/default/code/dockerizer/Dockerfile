@@ -7,8 +7,8 @@ COPY ./dockerizer/vhost.conf /opt/docker/etc/httpd/vhost.conf
 
 ENV WEB_PHP_SOCKET /var/run/php-fpm.sock
 
-
+WORKDIR /app
 COPY . /app
 
 # Set the correct permissions
-RUN chown -R www-data:www-data
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
