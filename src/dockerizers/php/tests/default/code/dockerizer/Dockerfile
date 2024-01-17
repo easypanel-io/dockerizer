@@ -5,7 +5,7 @@ COPY ./dockerizer/php.ini /opt/docker/etc/php/php.ini
 COPY ./dockerizer/vhost.conf /opt/docker/etc/httpd/vhost.conf
 
 
-ENV WEB_PHP_SOCKET /var/run/php-fpm.sock
+# ENV WEB_PHP_SOCKET /var/run/php-fpm.sock
 
 COPY . /app
 
