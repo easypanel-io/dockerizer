@@ -11,7 +11,8 @@
     "compile-files-watch": "nodemon --exec npm run compile-files --watch './src/dockerizers/*/files/**' --ext '*'",
     "compile-tests": "tsx src/scripts/compile-tests.ts",
     "compile": "npm run compile-files && npm run compile-tests",
-    "move-dist": "rm -rf ../website/static/dockerizer/* && cp -r ./dist/* ../website/static/dockerizer/"
+    "move-dist": "rm -rf ../website/static/dockerizer/* && cp -r ./dist/* ../website/static/dockerizer/",
+    "hadolint": "tsx src/scripts/hadolint.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
