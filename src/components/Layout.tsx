@@ -7,9 +7,11 @@ import { detectLanguage } from "@/lib/highlight";
 import { Files } from "@/lib/types";
 import { debounce } from "lodash";
 import {
+  ConciergeBellIcon,
   CopyIcon,
   DownloadIcon,
   GithubIcon,
+  LayoutGridIcon,
   PlayIcon,
   ShipIcon,
 } from "lucide-react";
@@ -24,6 +26,7 @@ import {
   atomOneLight,
 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { toast } from "sonner";
+import { SimpleTooltip } from "./SimpleTooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,7 +39,22 @@ export function Layout({ children }: { children: ReactNode }) {
           <ShipIcon className="mr-2 h-7 w-7 text-green-500" />
           Dockerizer
         </Link>
-        <div className="">
+
+        <div className="flex items-center space-x-2">
+          <SimpleTooltip content="All Dockerizers">
+            <Button variant="outline" size="icon" asChild>
+              <Link href="/">
+                <LayoutGridIcon className="h-5 w-5" />
+              </Link>
+            </Button>
+          </SimpleTooltip>
+          <SimpleTooltip content="Request Dockerizer">
+            <Button variant="outline" size="icon" asChild>
+              <Link href="https://github.com/easypanel-io/dockerizer/issues/new?title=REQUEST: ">
+                <ConciergeBellIcon className="h-5 w-5" />
+              </Link>
+            </Button>
+          </SimpleTooltip>
           <ModeToggle />
         </div>
       </div>
