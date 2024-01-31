@@ -6,7 +6,7 @@ server {
     root "{{ documentRoot }}";
     index index.php;
 
-    client_max_body_size 50m; #la fel ca php.ini
+    client_max_body_size 50m;
 
     access_log   /docker.stdout;
     error_log    /docker.stderr warn;
