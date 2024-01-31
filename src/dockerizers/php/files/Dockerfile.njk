@@ -1,17 +1,14 @@
 FROM webdevops/php-{{ webServer }}:{{ phpVersion }}{{ '-alpine' if alpine }}
 
 COPY ./dockerizer/php.ini /opt/docker/etc/php/php.ini
-
-{% if webServer === "apache" -%}
+{%- if webServer === "apache" %}
 COPY ./dockerizer/vhost.conf /opt/docker/etc/httpd/vhost.conf
-{% endif -%}
-{% if webServer === "nginx" -%}
+{%- endif %}
+{%- if webServer === "nginx" %}
 COPY ./dockerizer/vhost.conf /opt/docker/etc/nginx/vhost.conf
 {%- endif %}
-
-{% if runComposerInstall %}
+{%- if runComposerInstall %}
 COPY composer.json composer.lock /app/
 RUN composer install --no-interaction --no-scripts --no-suggest
-{% endif %}
-
+{%- endif %}
 COPY . /app
