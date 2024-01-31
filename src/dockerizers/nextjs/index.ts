@@ -9,8 +9,8 @@ export const schema = z.object({
   host: z.string().default("0.0.0.0"),
   port: z.string().default("3000"),
   // advanced
-  filePermissionsUser: z.string().default("nextjs"),
-  filePermissionsGroup: z.string().default("nodejs"),
+  user: z.string().default("nextjs"),
+  group: z.string().default("nodejs"),
   alpinePackages: z.string().default("libc6-compat"),
 });
 

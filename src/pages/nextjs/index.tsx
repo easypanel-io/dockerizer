@@ -18,42 +18,24 @@ export default function Page() {
 
   return (
     <DockerizerLayout title="Next.js" form={form} generate={generate}>
-      <FormSelect
-        control={form.control}
-        name="nodeImage"
-        label="Node image"
-        options={nodeImageOptions}
-      />
-      <FormSwitch
-        control={form.control}
-        name="telemetry"
-        label="Telemetry"
-        description="Check if you want Telemetry"
-      />
-      <FormInput
-        control={form.control}
-        name="filePermissionsUser"
-        label="File Permissions (User)"
-        inputProps={{
-          placeholder: "...",
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="filePermissionsGroup"
-        label="File Permissions (Group)"
-        inputProps={{
-          placeholder: "...",
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="alpinePackages"
-        label="Alpine packages"
-        inputProps={{
-          placeholder: "...",
-        }}
-      />
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormSelect
+          control={form.control}
+          name="nodeImage"
+          label="Node image"
+          options={nodeImageOptions}
+        />
+        <FormInput
+          control={form.control}
+          name="alpinePackages"
+          label="Alpine packages"
+        />
+        <FormSwitch control={form.control} name="telemetry" label="Telemetry" />
+      </div>
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormInput control={form.control} name="user" label="User" />
+        <FormInput control={form.control} name="group" label="Group" />
+      </div>
     </DockerizerLayout>
   );
 }

@@ -18,44 +18,33 @@ export default function Page() {
 
   return (
     <DockerizerLayout title="Strapi" form={form} generate={generate}>
-      <FormSelect
-        control={form.control}
-        name="nodeVersion"
-        label="Node version"
-        options={nodeVersionOptions}
-      />
-      <FormInput
-        control={form.control}
-        name="buildStagePackages"
-        label="Build stage packages"
-        inputProps={{
-          placeholder: defaultValues.buildStagePackages,
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="productionStagePackages"
-        label="Production packages"
-        inputProps={{
-          placeholder: "vips-dev",
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="user"
-        label="User"
-        inputProps={{
-          placeholder: "node",
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="port"
-        label="Port"
-        inputProps={{
-          placeholder: "1337",
-        }}
-      />
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormSelect
+          control={form.control}
+          name="nodeVersion"
+          label="Node version"
+          options={nodeVersionOptions}
+        />
+      </div>
+      <div className="grid md:grid-cols-2 gap-6">
+        <FormInput
+          control={form.control}
+          name="buildStagePackages"
+          label="Build stage packages"
+          inputProps={{
+            placeholder: defaultValues.buildStagePackages,
+          }}
+        />
+        <FormInput
+          control={form.control}
+          name="productionStagePackages"
+          label="Production stage packages"
+        />
+      </div>
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormInput control={form.control} name="user" label="User" />
+        <FormInput control={form.control} name="port" label="Port" />
+      </div>
     </DockerizerLayout>
   );
 }

@@ -19,35 +19,39 @@ export default function Page() {
 
   return (
     <DockerizerLayout title="Angular" form={form} generate={generate}>
-      <FormInput
-        control={form.control}
-        name="projectName"
-        label="Project Name"
-        inputProps={{
-          placeholder: "myApp",
-        }}
-      />
-      <FormSelect
-        control={form.control}
-        name="nodeImage"
-        label="Node image"
-        options={nodeImageOptions}
-      />
-      <FormSelect
-        control={form.control}
-        name="nginxImage"
-        label="Nginx image"
-        options={nginxImageOptions}
-      />
-      <FormInput
-        control={form.control}
-        name="port"
-        label="Port"
-        inputProps={{
-          placeholder: "80",
-          type: "number",
-        }}
-      />
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormInput
+          control={form.control}
+          name="projectName"
+          label="Project Name"
+          inputProps={{
+            placeholder: "myApp",
+          }}
+        />
+      </div>
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormSelect
+          control={form.control}
+          name="nodeImage"
+          label="Node image"
+          options={nodeImageOptions}
+        />
+        <FormSelect
+          control={form.control}
+          name="nginxImage"
+          label="Nginx image"
+          options={nginxImageOptions}
+        />
+        <FormInput
+          control={form.control}
+          name="port"
+          label="Port"
+          inputProps={{
+            placeholder: "80",
+            type: "number",
+          }}
+        />
+      </div>
     </DockerizerLayout>
   );
 }

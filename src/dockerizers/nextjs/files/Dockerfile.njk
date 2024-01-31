@@ -51,8 +51,8 @@ ENV NEXT_TELEMETRY_DISABLED 1
 {% endif %}
 
 
-RUN addgroup --system --gid 1001 {{filePermissionsGroup}}
-RUN adduser --system --uid 1001 {{filePermissionsUser}}
+RUN addgroup --system --gid 1001 {{group}}
+RUN adduser --system --uid 1001 {{user}}
 
 COPY --from=builder /app/public ./public
 

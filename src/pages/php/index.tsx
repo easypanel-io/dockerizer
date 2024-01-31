@@ -20,80 +20,68 @@ export default function Page() {
 
   return (
     <DockerizerLayout title="PHP" form={form} generate={generate}>
-      <FormSelect
-        control={form.control}
-        name="phpVersion"
-        label="PHP version"
-        options={phpVersionOptions}
-      />
-      <FormSwitch control={form.control} name="alpine" label="Alpine" />
-      <FormInput
-        control={form.control}
-        name="documentRoot"
-        label="Document Root"
-        inputProps={{
-          placeholder: "/",
-        }}
-      />
-      <FormSelect
-        control={form.control}
-        name="webServer"
-        label="Web Server"
-        options={webServerOptions}
-      />
-      <FormSwitch
-        control={form.control}
-        name="runComposerInstall"
-        label="Run composer install"
-      />
-      <FormInput
-        control={form.control}
-        name="phpDateTimezone"
-        label="PHP Date Timezone"
-        inputProps={{
-          placeholder: "",
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="phpDisplayErrors"
-        label="PHP Display Errors"
-        inputProps={{
-          placeholder: "",
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="phpMemoryLimit"
-        label="PHP Memory Limit"
-        inputProps={{
-          placeholder: "",
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="phpMaxExecutionTime"
-        label="PHP Max Execution Time"
-        inputProps={{
-          placeholder: "",
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="phpPostMaxSize"
-        label="PHP Post Max Size"
-        inputProps={{
-          placeholder: "",
-        }}
-      />
-      <FormInput
-        control={form.control}
-        name="phpUploadMaxFilesize"
-        label="PHP Upload Max Filesize"
-        inputProps={{
-          placeholder: "",
-        }}
-      />
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormSelect
+          control={form.control}
+          name="phpVersion"
+          label="PHP version"
+          options={phpVersionOptions}
+        />
+        <FormSwitch control={form.control} name="alpine" label="Alpine" />
+      </div>
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormSelect
+          control={form.control}
+          name="webServer"
+          label="Web Server"
+          options={webServerOptions}
+        />
+        <FormInput
+          control={form.control}
+          name="documentRoot"
+          label="Document Root"
+          inputProps={{
+            placeholder: "/",
+          }}
+        />
+        <FormSwitch
+          control={form.control}
+          name="runComposerInstall"
+          label="Run composer install"
+        />
+      </div>
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormInput
+          control={form.control}
+          name="phpDateTimezone"
+          label="PHP Date Timezone"
+        />
+        <FormInput
+          control={form.control}
+          name="phpDisplayErrors"
+          label="PHP Display Errors"
+        />
+        <FormInput
+          control={form.control}
+          name="phpMemoryLimit"
+          label="PHP Memory Limit"
+        />
+        <FormInput
+          control={form.control}
+          name="phpMaxExecutionTime"
+          label="PHP Max Execution Time"
+        />
+        <FormInput
+          control={form.control}
+          name="phpPostMaxSize"
+          label="PHP Post Max Size"
+        />
+        <FormInput
+          control={form.control}
+          name="phpUploadMaxFilesize"
+          label="PHP Upload Max Filesize"
+        />
+      </div>
     </DockerizerLayout>
   );
 }

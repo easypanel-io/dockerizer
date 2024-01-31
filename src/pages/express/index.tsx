@@ -18,21 +18,23 @@ export default function Page() {
 
   return (
     <DockerizerLayout title="Express.js" form={form} generate={generate}>
-      <FormSelect
-        control={form.control}
-        name="nodeImage"
-        label="Node image"
-        options={nodeImageOptions}
-      />
-      <FormInput
-        control={form.control}
-        name="port"
-        label="Port"
-        inputProps={{
-          type: "number",
-          placeholder: "3000",
-        }}
-      />
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormSelect
+          control={form.control}
+          name="nodeImage"
+          label="Node image"
+          options={nodeImageOptions}
+        />
+        <FormInput
+          control={form.control}
+          name="port"
+          label="Port"
+          inputProps={{
+            type: "number",
+            placeholder: "3000",
+          }}
+        />
+      </div>
     </DockerizerLayout>
   );
 }

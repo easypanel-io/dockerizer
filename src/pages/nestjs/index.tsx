@@ -18,12 +18,14 @@ export default function Page() {
 
   return (
     <DockerizerLayout title="Nest.js" form={form} generate={generate}>
-      <FormSelect
-        control={form.control}
-        name="nodeImage"
-        label="Node image"
-        options={nodeImageOptions}
-      />
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormSelect
+          control={form.control}
+          name="nodeImage"
+          label="Node image"
+          options={nodeImageOptions}
+        />
+      </div>
     </DockerizerLayout>
   );
 }

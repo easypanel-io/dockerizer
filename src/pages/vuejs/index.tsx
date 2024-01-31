@@ -19,27 +19,28 @@ export default function Page() {
 
   return (
     <DockerizerLayout title="VueJs" form={form} generate={generate}>
-      <FormSelect
-        control={form.control}
-        name="nodeImage"
-        label="Node image"
-        options={nodeImageOptions}
-      />
-      <FormSelect
-        control={form.control}
-        name="nginxImage"
-        label="Nginx image"
-        options={nginxImageOptions}
-      />
-      <FormInput
-        control={form.control}
-        name="port"
-        label="Port"
-        inputProps={{
-          placeholder: "80",
-          type: "number",
-        }}
-      />
+      <div className="grid md:grid-cols-3 gap-6">
+        <FormSelect
+          control={form.control}
+          name="nodeImage"
+          label="Node image"
+          options={nodeImageOptions}
+        />
+        <FormSelect
+          control={form.control}
+          name="nginxImage"
+          label="Nginx image"
+          options={nginxImageOptions}
+        />
+        <FormInput
+          control={form.control}
+          name="port"
+          label="Port"
+          inputProps={{
+            type: "number",
+          }}
+        />
+      </div>
     </DockerizerLayout>
   );
 }
