@@ -107,42 +107,85 @@ export function DockerizerLayout({
             </Button>
           </div>
         </div>
-        <div className="space-y-8 scroll-mt-16" id="start">
-          <div className="space-y-6">{children}</div>
+        <div className="space-y-14 scroll-mt-16" id="start">
           <div>
-            <h2>Setup & Build</h2>
-            <Button onClick={download} variant="secondary">
-              <DownloadIcon className="mr-2 h-4 w-4" />
-              Download
-            </Button>
+            <h2 className="text-2xl font-medium mb-6">Config</h2>
+            <div className="space-y-6">{children}</div>
+          </div>
+          <div>
+            <h2 className="text-2xl font-medium mb-6">Setup</h2>
+            <ul className="text-slate-900 dark:text-slate-200 space-y-6">
+              <li className="flex">
+                {/*  */}
+                <div className="inline-flex rounded-full w-6 h-6 items-center justify-center mr-2 text-green-500 border border-green-300 dark:border-green-800 bg-green-500/5 text-sm font-medium">
+                  1
+                </div>
+                <div className="flex-1 space-y-2">
+                  <div>Download and extract the files</div>
+                  <Button onClick={download} size="sm">
+                    <DownloadIcon className="mr-2 h-4 w-4" />
+                    Download
+                  </Button>
+                </div>
+              </li>
+              <li className="flex">
+                <div className="inline-flex rounded-full w-6 h-6 items-center justify-center mr-2 text-green-500 border border-green-300 dark:border-green-800 bg-green-500/5 text-sm font-medium">
+                  2
+                </div>
+                <div className="flex-1 space-y-2">
+                  <div>Move the files into your codebase</div>
+                  <div className="text-muted-foreground text-sm">
+                    The extracted{" "}
+                    <code className="border rounded p-1 bg-zinc-100 dark:bg-zinc-800">
+                      dockerizer
+                    </code>{" "}
+                    folder should be in the root of your project.
+                  </div>
+                </div>
+              </li>
+              <li className="flex">
+                <div className="inline-flex rounded-full w-6 h-6 items-center justify-center mr-2 text-green-500 border border-green-300 dark:border-green-800 bg-green-500/5 text-sm font-medium">
+                  3
+                </div>
+                <div className="flex-1 space-y-2">
+                  <div>Build the docker image</div>
+                  <code className="inline-block text-muted-foreground text-sm border rounded-md py-2 px-3 bg-zinc-100 dark:bg-zinc-800">
+                    docker build -t my-app -f .dockerizer/Dockerfile .
+                  </code>
+                </div>
+              </li>
+            </ul>
           </div>
           {previewFiles && Object.entries(previewFiles).length > 0 && (
-            <div className="spacy-y-4">
-              {Object.entries(previewFiles).map(([name, content], index) => (
-                <div key={name} className="rounded-md overflow-hidden">
-                  <div className="flex justify-between items-center py-2 border-b">
-                    <div className="text-sm font-medium">{name}</div>
-                    <Button
-                      size="xs"
-                      variant="outline"
-                      onClick={() => {
-                        navigator.clipboard.writeText(content);
-                        toast("Copied to clipboard");
-                      }}
+            <div>
+              <h2 className="text-2xl font-medium mb-6">Files</h2>
+              <div className="spacy-y-4">
+                {Object.entries(previewFiles).map(([name, content], index) => (
+                  <div key={name} className="rounded-md overflow-hidden">
+                    <div className="flex justify-between items-center pb-2 border-b">
+                      <div className="text-sm font-medium">{name}</div>
+                      <Button
+                        size="xs"
+                        variant="outline"
+                        onClick={() => {
+                          navigator.clipboard.writeText(content);
+                          toast("Copied to clipboard");
+                        }}
+                      >
+                        <CopyIcon className="mr-2 h-3.5 w-3.5" />
+                        Copy
+                      </Button>
+                    </div>
+                    <SyntaxHighlighter
+                      language={detectLanguage(name)}
+                      style={theme === "light" ? atomOneLight : atomOneDark}
+                      className="text-sm  !p-4"
                     >
-                      <CopyIcon className="mr-2 h-3.5 w-3.5" />
-                      Copy
-                    </Button>
+                      {content}
+                    </SyntaxHighlighter>
                   </div>
-                  <SyntaxHighlighter
-                    language={detectLanguage(name)}
-                    style={theme === "light" ? atomOneLight : atomOneDark}
-                    className="text-sm  !p-4"
-                  >
-                    {content}
-                  </SyntaxHighlighter>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           )}
         </div>
