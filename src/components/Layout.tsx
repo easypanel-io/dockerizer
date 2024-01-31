@@ -77,10 +77,10 @@ export function DockerizerLayout({
           >
             Provided by Easypanel
           </Link>
-          <h1 className="text-5xl tracking-tight font-bold">
+          <h1 className="text-4xl tracking-tight font-bold">
             Dockerize {title} Applications
           </h1>
-          <h2 className="text-2xl text-zinc-600/90 dark:text-zinc-300/90 mt-2">
+          <h2 className="text-xl text-zinc-600/90 dark:text-zinc-300/90 mt-2">
             The fastest way to dockerize your {title} app.
           </h2>
           <div className="flex space-x-2 mt-10">
