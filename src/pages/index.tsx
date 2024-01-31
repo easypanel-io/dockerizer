@@ -7,24 +7,29 @@ import {
   SiAngular,
   SiExpress,
   SiLaravel,
+  SiNestjs,
   SiNextdotjs,
   SiNodedotjs,
   SiNuxtdotjs,
+  SiPhp,
   SiReact,
   SiStrapi,
   SiVuedotjs,
 } from "react-icons/si";
 
+// Find icons and colors here: https://simpleicons.org/
 const items = [
+  { label: "Angular", slug: "angular", logo: SiAngular, color: "#CB2B39" },
+  { label: "Express", slug: "express", logo: SiExpress, color: undefined },
   { label: "Laravel", slug: "laravel", logo: SiLaravel, color: "#FF2D20" },
+  { label: "Nest.js", slug: "nestjs", logo: SiNestjs, color: "#E0234E" },
   { label: "Next.js", slug: "nextjs", logo: SiNextdotjs, color: undefined },
+  { label: "Node.js", slug: "nodejs", logo: SiNodedotjs, color: "#339933" },
+  { label: "Nuxt.js", slug: "nuxtjs", logo: SiNuxtdotjs, color: "#00DC82" },
+  { label: "PHP", slug: "php", logo: SiPhp, color: "#777BB4" },
+  { label: "React", slug: "react", logo: SiReact, color: "#087ea4" },
   { label: "Strapi", slug: "strapi", logo: SiStrapi, color: "#4945FF" },
   { label: "Vue.js", slug: "vuejs", logo: SiVuedotjs, color: "#4FC08D" },
-  { label: "React", slug: "react", logo: SiReact, color: "#087ea4" },
-  { label: "Angular", slug: "angular", logo: SiAngular, color: "#CB2B39" },
-  { label: "Nuxt.js", slug: "nuxtjs", logo: SiNuxtdotjs, color: "#00DC82" },
-  { label: "Node.js", slug: "nodejs", logo: SiNodedotjs, color: "#339933" },
-  { label: "Express", slug: "express", logo: SiExpress, color: undefined },
 ];
 
 export default function Home() {
