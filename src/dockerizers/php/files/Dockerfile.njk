@@ -7,7 +7,7 @@ COPY ./dockerizer/vhost.conf /opt/docker/etc/httpd/vhost.conf
 {%- if webServer === "nginx" %}
 COPY ./dockerizer/vhost.conf /opt/docker/etc/nginx/vhost.conf
 {%- endif %}
-{%- if runComposerInstall %}
+{%- if composerInstall %}
 COPY composer.json composer.lock /app/
 RUN composer install --no-interaction --no-scripts --no-suggest
 {%- endif %}

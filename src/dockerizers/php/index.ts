@@ -9,9 +9,9 @@ export const schema = z.object({
   alpine: z.boolean().default(true),
   documentRoot: z.string().default("/"),
   webServer: z.string().default("nginx"),
-  runComposerInstall: z.boolean().default(false),
+  composerInstall: z.boolean().default(false),
 
-  phpDateTimezone: z.string().default("Europe/Bucharest"),
+  phpDateTimezone: z.string().default("UTC"),
   phpDisplayErrors: z.string().default("Off"),
   phpMemoryLimit: z.string().default("128M"),
   phpMaxExecutionTime: z.number().default(60),

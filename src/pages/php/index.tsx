@@ -46,8 +46,8 @@ export default function Page() {
         />
         <FormSwitch
           control={form.control}
-          name="runComposerInstall"
-          label="Run composer install"
+          name="composerInstall"
+          label="Composer Install"
         />
       </div>
       <div className="grid md:grid-cols-3 gap-6">
