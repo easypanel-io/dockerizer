@@ -14,7 +14,7 @@ COPY . .
 RUN yarn build
 
 # Creating final production image
-FROM node:{{nodeVersion}}-alpine AS build
+FROM node:{{nodeVersion}}-alpine
 RUN apk add --no-cache {{productionStagePackages}}
 ENV NODE_ENV=production
 WORKDIR /opt/
