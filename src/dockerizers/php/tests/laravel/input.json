@@ -1,1 +1,1 @@
-{ "documentRoot": "/public" }
+{ "documentRoot": "/public", "composerInstall": true }
