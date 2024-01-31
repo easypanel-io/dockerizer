@@ -185,7 +185,7 @@ export function DockerizerLayout({
           {previewFiles && Object.entries(previewFiles).length > 0 && (
             <div>
               <h2 className="text-2xl font-medium mb-6">Files</h2>
-              <div className="spacy-y-4">
+              <div className="space-y-4">
                 {Object.entries(previewFiles).map(([name, content], index) => (
                   <div key={name} className="rounded-md overflow-hidden">
                     <div className="flex justify-between items-center pb-2 border-b">
