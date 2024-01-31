@@ -49,7 +49,7 @@ export function Layout({ children }: { children: ReactNode }) {
               </Link>
             </Button>
           </SimpleTooltip>
-          <SimpleTooltip content="Request Dockerizer">
+          <SimpleTooltip content="Request a Dockerizer">
             <Button variant="outline" size="icon" asChild>
               <Link href="https://github.com/easypanel-io/dockerizer/issues/new?title=REQUEST: ">
                 <ConciergeBellIcon className="h-5 w-5" />
