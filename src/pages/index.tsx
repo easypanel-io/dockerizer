@@ -1,6 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { GithubIcon, PlayIcon } from "lucide-react";
+import Head from "next/head";
 import Link from "next/link";
 import {
   SiAngular,
@@ -29,6 +30,13 @@ const items = [
 export default function Home() {
   return (
     <Layout>
+      <Head>
+        <title>Dockerizer by Easypanel</title>
+        <meta
+          name="description"
+          content="The fastest way to dockerize your apps."
+        />
+      </Head>
       <div className="flex flex-col items-center my-24">
         <Link
           href="https://easypanel.io/"

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Inter } from "next/font/google";
+import Head from "next/head";
 import Link from "next/link";
 import { ReactNode, useCallback, useEffect, useState } from "react";
 import { UseFormReturn } from "react-hook-form";
@@ -88,6 +89,13 @@ export function DockerizerLayout({
   return (
     <Form {...form}>
       <Layout>
+        <Head>
+          <title>Dockerize {title} Applications</title>
+          <meta
+            name="description"
+            content={`The fastest way to dockerize your ${title} app.`}
+          />
+        </Head>
         <div className="flex flex-col items-start my-24">
           <Link
             href="https://easypanel.io/"
