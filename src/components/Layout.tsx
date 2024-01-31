@@ -143,7 +143,7 @@ export function DockerizerLayout({
             <ul className="text-slate-900 dark:text-slate-200 space-y-6">
               <li className="flex">
                 {/*  */}
-                <div className="inline-flex rounded-full w-6 h-6 items-center justify-center mr-2 text-green-500 border border-green-300 dark:border-green-800 bg-green-500/5 text-sm font-medium">
+                <div className="inline-flex rounded-full w-8 h-8 items-center justify-center mr-4 text-green-500 border border-green-300 dark:border-green-800 bg-green-500/5 text-sm font-medium">
                   1
                 </div>
                 <div className="flex-1 space-y-2">
@@ -155,7 +155,7 @@ export function DockerizerLayout({
                 </div>
               </li>
               <li className="flex">
-                <div className="inline-flex rounded-full w-6 h-6 items-center justify-center mr-2 text-green-500 border border-green-300 dark:border-green-800 bg-green-500/5 text-sm font-medium">
+                <div className="inline-flex rounded-full w-8 h-8 items-center justify-center mr-4 text-green-500 border border-green-300 dark:border-green-800 bg-green-500/5 text-sm font-medium">
                   2
                 </div>
                 <div className="flex-1 space-y-2">
@@ -170,7 +170,7 @@ export function DockerizerLayout({
                 </div>
               </li>
               <li className="flex">
-                <div className="inline-flex rounded-full w-6 h-6 items-center justify-center mr-2 text-green-500 border border-green-300 dark:border-green-800 bg-green-500/5 text-sm font-medium">
+                <div className="inline-flex rounded-full w-8 h-8 items-center justify-center mr-4 text-green-500 border border-green-300 dark:border-green-800 bg-green-500/5 text-sm font-medium">
                   3
                 </div>
                 <div className="flex-1 space-y-2">
@@ -187,12 +187,12 @@ export function DockerizerLayout({
               <h2 className="text-2xl font-medium mb-6">Files</h2>
               <div className="space-y-4">
                 {Object.entries(previewFiles).map(([name, content], index) => (
-                  <div key={name} className="rounded-md overflow-hidden">
-                    <div className="flex justify-between items-center pb-2 border-b">
+                  <div key={name}>
+                    <div className="flex justify-between items-center pb-2">
                       <div className="text-sm font-medium">{name}</div>
                       <Button
                         size="xs"
-                        variant="outline"
+                        variant="ghost"
                         onClick={() => {
                           navigator.clipboard.writeText(content);
                           toast("Copied to clipboard");
@@ -205,7 +205,7 @@ export function DockerizerLayout({
                     <SyntaxHighlighter
                       language={detectLanguage(name)}
                       style={theme === "light" ? atomOneLight : atomOneDark}
-                      className="text-sm  !p-4"
+                      className="text-sm  !p-4 border rounded-md overflow-hidden"
                     >
                       {content}
                     </SyntaxHighlighter>
