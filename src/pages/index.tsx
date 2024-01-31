@@ -80,7 +80,7 @@ export default function Home() {
             <Link href={`/${item.slug}`} className="group flex flex-col gap-4">
               <div
                 style={{ color: item.color }}
-                className="opacity-80 group-hover:opacity-100 transition-opacity"
+                className="opacity-90 group-hover:opacity-100 transition-opacity"
               >
                 <item.logo size={40} height={40} />
               </div>

@@ -32,9 +32,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
-    <main className={`${inter.className}`}>
+    <main className={`${inter.className} pt-10`}>
       {/* <div className="fixed left-0 right-0 top-0 z-10 flex justify-between bg-gray-300 mb-10 p-4"> */}
-      <div className="flex justify-between items-center p-2">
+      <div className="fixed left-0 right-0 top-0 z-10 flex justify-between items-center p-2 bg-white/30 dark:bg-black/30 backdrop-blur">
         <Link href="/" className="flex items-center font-semibold text-xl ml-2">
           <ShipIcon className="mr-2 h-7 w-7 text-green-500" />
           Dockerizer
