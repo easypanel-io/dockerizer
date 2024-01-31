@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently 'next dev' 'npm:compile-files-watch'",
+    "dev": "next dev",
     "build": "npm run compile && next build",
     "start": "next start",
     "lint": "next lint",
