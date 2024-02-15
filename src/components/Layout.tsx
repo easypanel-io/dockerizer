@@ -184,7 +184,7 @@ export function DockerizerLayout({
                 <div className="flex-1 space-y-2">
                   <div>Build the docker image</div>
                   <code className="inline-block text-muted-foreground text-sm border rounded-md py-2 px-3 bg-zinc-100 dark:bg-zinc-800">
-                    docker build -t my-app -f .dockerizer/Dockerfile .
+                    docker build -t my-app -f ./dockerizer/Dockerfile .
                   </code>
                 </div>
               </li>

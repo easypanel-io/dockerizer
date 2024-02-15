@@ -42,7 +42,7 @@ export default function Home() {
           content="The fastest way to dockerize your apps."
         />
       </Head>
-      <div className="flex flex-col items-center my-24">
+      <div className="flex flex-col items-center text-center my-24">
         <Link
           href="https://easypanel.io/"
           className="mb-6 text-green-500 border rounded-full py-1 px-3 border-green-300 dark:border-green-800 bg-green-500/5 hover:bg-green-500/15 text-sm font-medium leading-6 transition"
