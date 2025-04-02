@@ -71,6 +71,9 @@ export default function Page() {
           label="PHP Memory Limit"
         />
         <FormInput
+          inputProps={{
+            type: "number",
+          }}
           control={form.control}
           name="phpMaxExecutionTime"
           label="PHP Max Execution Time"

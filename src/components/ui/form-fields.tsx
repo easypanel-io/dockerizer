@@ -39,7 +39,18 @@ export const FormInput = <
         <FormItem>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Input {...field} {...inputProps} />
+            <Input
+              {...field}
+              {...inputProps}
+              onChange={(e) => {
+                field.onChange(
+                  inputProps?.type === "number"
+                    ? e.target.valueAsNumber || field.value
+                    : e.target.value
+                );
+              }}
+              value={field.value || ""}
+            />
           </FormControl>
           {description && <FormDescription>{description}</FormDescription>}
           <FormMessage />
